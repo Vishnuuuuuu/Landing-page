@@ -1,0 +1,64 @@
+/* src/LandingPage.css */
+
+/* Base styles */
+.landing-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    height: calc(100vh - 40px); /* Full height adjusted for padding */
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents any overflow from causing scroll bars */
+  }
+  
+  .subscription-section {
+    margin-top: -200px; /* Adjustment might be reviewed based on actual layout needs */
+    flex-basis: 65%; /* Allocates 65% of the container width */
+    text-align: left;
+    padding: 3px;
+  }
+  
+  .subscription-section iframe {
+    width: 80%; /* Ensures iframe fills the allocated section width */
+    margin-top: -20px;
+  }
+  
+  .image-section {
+    flex-basis: 35%; /* Allocates 35% of the container width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-section img {
+    max-width: 100%; /* Adjusts max-width for better control over the image display */
+    height: auto; /* Ensures the image height scales with the width */
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .landing-container {
+      flex-direction: row; /* Keeps the layout horizontal on all device widths */
+    }
+  
+    .subscription-section, .image-section {
+      flex-basis: auto; /* Resets flex-basis to use specific percentage based widths below */
+    }
+  
+    .subscription-section {
+      flex: 0 0 65%; /* Ensures subscription section does not grow or shrink but fills 65% */
+    }
+  
+    .image-section {
+      flex: 0 0 35%; /* Ensures image section does not grow or shrink but fills 35% */
+      margin-top: 0; /* Ensures there is no extra margin pushing the layout */
+    }
+  
+    .image-section img {
+      max-width: 100%; /* Ensures image uses up to 100% of its allocated section if needed */
+    }
+  }
+  
